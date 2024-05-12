@@ -3,28 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 40, 40, 40;
+  --background-start-rgb: 40, 40, 40;
+  --background-end-rgb: 40, 40, 40;
 }
-
+/* 기존의 dark mode 설정 */
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 200, 200, 200;
+    --background-start-rgb: 30, 30, 30; /* 어두운 회색 */
+    --background-end-rgb: 40, 40, 40;  /* 더 어두운 회색 */
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(35, 35, 35) 50%,
+    rgb(var(--background-end-rgb))
+  );
 }
+
 
 @layer utilities {
   .text-balance {
